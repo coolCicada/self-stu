@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React + TS</title>
+  <style>
+    .outer {
+      background-color: palegoldenrod;
+      width: 200px;
+      height: 200px;
+      padding: 50px;
+    }
+    .inner {
+      background-color: palevioletred;
+      width: 100px;
+      height: 100px;
+      padding: 50px;
+    }
+    .self {
+      background-color: aqua;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div class='outer'>
+    outer
+    <div class='inner'>
+      inner
+      <div class="self">
+        self
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('click', () => {
+      console.log('document原生事件------冒泡');
+    });
+
+    document.addEventListener('click', (e) => {
+      e.stopPropagation();
+      console.log('document原生事件------捕获', e);
+    }, true);
+
+    document.body.addEventListener('click', () => {
+      console.log('body原生事件------冒泡');
+    });
+
+    document.body.addEventListener('click', () => {
+      console.log('body原生事件------捕获');
+    }, true);
+
+    document.querySelector('.outer').addEventListener('click',
+      () => {
+        console.log('outer原生事件------冒泡');
+      });
+
+    document.querySelector('.outer').addEventListener('click',
+      () => {
+        console.log('outer原生事件------捕获');
+      }, true)
+
+    document.querySelector('.inner').addEventListener('click',
+      () => {
+        console.log('inner原生事件------冒泡');
+
+      });
+
+    document.querySelector('.inner').addEventListener('click',
+      () => {
+        console.log('inner原生事件------捕获');
+      }, true);
+  </script>
+</body>
+
+</html>
