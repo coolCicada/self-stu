@@ -3,9 +3,3 @@
 ## test-react-ui
 
   个人组件库测试
-
-  really late
-!!!
-123
-0000
-over
