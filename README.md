@@ -19,3 +19,4 @@
 
 - 测试 rebase
 - 测试 squash
+- 测试 squash2
