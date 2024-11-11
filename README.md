@@ -23,3 +23,4 @@
 - 测试 squash2
 - 测试 squash3
 - 测试 squash4
+- 测试 squash5
